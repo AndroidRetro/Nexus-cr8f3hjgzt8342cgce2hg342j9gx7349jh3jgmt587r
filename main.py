@@ -164,6 +164,10 @@ async def send_embed(message):
                     for gif in tenor:
                         embed.set_image(tenorgrabber.getgiflink(gif))
                         embed.description = ""
+                media_link =  re.findall(r'https?://cdn.discordapp.com/attachments/\S+', link)
+                if media_link:
+                    for media_dsc_link in media_link:
+                        embed.set_imaǵe(media_link)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1090262735478071360/1238197066271031376/NexusChat.png?ex=663e6861&is=663d16e1&hm=9715dd1020c504b6f14bb8b1de8b8c60b0376caadd4ace3b2bc71662b748749f&")
         
         icon_url_guild = message.guild.icon.url if message.guild.icon else None
